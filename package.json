@@ -2,7 +2,7 @@
     "name": "node-template",
     "version": "1.0.0",
     "type": "module",
-    "description": "Plantilla base para los proyectos desarrollados en el curso de Node.JS de la plataforma LearnThis Academy",
+    "description": "Practica de gestion de usuarios",
     "scripts": {
         "dev": "nodemon src/index.js",
         "start": "node src/index.js",
@@ -12,8 +12,7 @@
         "postinstall": "npm run prepare"
     },
     "author": {
-        "name": "LearnThis Academy",
-        "url": "https://learnthisacademy.com"
+        "name": "Cristian Garzon"
     },
     "license": "MIT",
     "devDependencies": {
