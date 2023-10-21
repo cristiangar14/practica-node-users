@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 const userSchema = new Schema({
+    _id: {
+        type: String,
+        _id: false,
+    },
     name: {
         type: String,
         require: true,
@@ -18,6 +22,7 @@ const userSchema = new Schema({
     email: {
         type: String,
         require: true,
+        unique: true
     },
     password: {
         type: String,
