@@ -9,7 +9,10 @@ const UpdatePasswordDTOSchema = Type.Object({
     oldPassword: passwordDTOSchema,
     newPassword: passwordDTOSchema
 }, {
-    additionalProperties: false
+    additionalProperties: false,
+    errorMessage: {
+        additionalProperties: 'El formato del objeto no es valido'
+    }
 })
 
 const ajv = new Ajv({ allErrors: true}).addKeyword('kind').addKeyword('modiffier');

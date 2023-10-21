@@ -11,7 +11,10 @@ const UnregisterDTOSchema = Type.Object({
     _id: idDTOSchema,
     password: passwordDTOSchema
 }, {
-    additionalProperties: false
+    additionalProperties: false,
+    errorMessage: {
+        additionalProperties: 'El formato del objeto no es valido'
+    }
 });
 
 const ajv = new Ajv({ allErrors: true}).addKeyword('kind').addKeyword('modiffier');
