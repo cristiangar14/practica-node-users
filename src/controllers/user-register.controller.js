@@ -5,7 +5,7 @@ const userRegisterController = async (req, res) => {
     const {
         _id,
         name,
-        surmane,
+        surname,
         email,
         password
     } = req.body;
@@ -22,7 +22,7 @@ const userRegisterController = async (req, res) => {
     const user = new UserModel({
         _id,
         name,
-        surmane,
+        surname,
         email,
         password: hashedPAssword
     });
