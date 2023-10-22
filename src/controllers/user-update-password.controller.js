@@ -1,5 +1,6 @@
 import UserModel from "#Schemas/user.schema.js";
 import { compare, hash } from "bcrypt";
+import { SALT } from "#Constants/salt.js";
 const userUpdatePasswordController = async (req, res) => {
     const { id } = req;
     const { oldPassword, newPassword } = req.body;
@@ -17,7 +18,7 @@ const userUpdatePasswordController = async (req, res) => {
             .status(401)
             .send('Credenciales incorrectas');
 
-    const hashedPAssword = await hash(newPassword, 12); 
+    const hashedPAssword = await hash(newPassword, SALT); 
     existingUserById.password = hashedPAssword;
 
     await existingUserById.save();

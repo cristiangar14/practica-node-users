@@ -1,5 +1,6 @@
 import UserModel from "#Schemas/user.schema.js";
 import { hash } from "bcrypt";
+import { SALT } from "#Constants/salt.js";
 
 const userRegisterController = async (req, res) => {
     const {
@@ -17,7 +18,7 @@ const userRegisterController = async (req, res) => {
     if (existingUserByEmail) return res.status(409).send('Ya existe un usuario con ese email registrado');
 
 
-    const hashedPAssword = await hash(password, 12);
+    const hashedPAssword = await hash(password, SALT);
 
     const user = new UserModel({
         _id,
