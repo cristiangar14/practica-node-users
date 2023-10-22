@@ -3,7 +3,7 @@ import Ajv from "ajv";
 import AddErrors from "ajv-errors";
 import { 
     passwordDTOSchema
-} from '#Lib/dto.types.js';
+} from '#Dto/dto.types.js';
 
 const UpdatePasswordDTOSchema = Type.Object({
     oldPassword: passwordDTOSchema,

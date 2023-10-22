@@ -4,7 +4,7 @@ import AddFormats  from "ajv-formats";
 import AddErrors from "ajv-errors";
 import { 
     passwordDTOSchema
-} from '#Lib/dto.types.js';
+} from '#Dto/dto.types.js';
 
 const UnregisterDTOSchema = Type.Object({
     password: passwordDTOSchema

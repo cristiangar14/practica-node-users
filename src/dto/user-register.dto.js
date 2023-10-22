@@ -8,7 +8,7 @@ import {
     surnameDTOSchema,
     emailDTOSchema,
     passwordDTOSchema
-} from '#Lib/dto.types.js';
+} from '#Dto/dto.types.js';
 
 const RegisterDTOSchema = Type.Object({
     _id: idDTOSchema,
