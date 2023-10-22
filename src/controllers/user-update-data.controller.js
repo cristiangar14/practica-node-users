@@ -7,7 +7,7 @@ const userUpdateDataController = async (req, res) => {
     if (!existingUserById) 
         return res
             .status(401)
-            .send('Usuario no autorizado');
+            .send({errors: ['Usuario no autorizado']});
 
     existingUserById.name = name;
     existingUserById.surname = surname;

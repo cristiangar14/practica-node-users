@@ -12,14 +12,14 @@ const userLoginController = async (req, res) => {
     if (!existingUserByEmail) 
         return res
             .status(401)
-            .send('Credenciales incorrectas');
+            .send({errors: ['Credenciales incorrectas']});
 
     const checkPassword = await compare(password, existingUserByEmail.password);
 
     if (!checkPassword) 
         return res
             .status(401)
-            .send('Credenciales incorrectas');
+            .send({errors: ['Credenciales incorrectas']});
 
     const jwtConstructor = new SignJWT({_id: existingUserByEmail._id});
 

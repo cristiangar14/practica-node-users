@@ -9,14 +9,14 @@ const userUpdatePasswordController = async (req, res) => {
     if (!existingUserById) 
         return res
             .status(401)
-            .send('Usuario no autorizado');
+            .send({errors: ['Usuario no autorizado']});
 
     const checkPassword = await compare(oldPassword, existingUserById.password);
 
     if (!checkPassword) 
         return res
             .status(401)
-            .send('Credenciales incorrectas');
+            .send({errors: ['Credenciales incorrectas']});
 
     const hashedPAssword = await hash(newPassword, SALT); 
     existingUserById.password = hashedPAssword;

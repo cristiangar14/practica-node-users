@@ -6,7 +6,7 @@ const userProfileController = async (req, res) => {
     if (!existingUserById) 
         return res
             .status(401)
-            .send('Usuario no autorizado');
+            .send({errors: ['Usuario no autorizado']});
 
     const {
         _id,
