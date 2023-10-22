@@ -3,12 +3,10 @@ import Ajv from "ajv";
 import AddFormats  from "ajv-formats";
 import AddErrors from "ajv-errors";
 import { 
-    idDTOSchema,
     passwordDTOSchema
 } from '#Lib/dto.types.js';
 
 const UnregisterDTOSchema = Type.Object({
-    _id: idDTOSchema,
     password: passwordDTOSchema
 }, {
     additionalProperties: false,
